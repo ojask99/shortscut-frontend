@@ -1,29 +1,129 @@
-# Create T3 App
+# Shortscut
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+**Shortscut** is an AI-powered podcast clipping tool built with a modern tech stack including **Next.js**, **Tailwind CSS**, **ShadCN UI**, **Modal**, **AWS S3**, **Auth.js**, **Inngest**, and **Gemini**.
 
-## What's next? How do I make an app with this?
+This application allows users to upload podcasts or videos, automatically identifies viral moments using AI, generates short clips with integrated subtitles, and enables users to download them from a centralized dashboard.
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+---
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+## ✨ Features
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Drizzle](https://orm.drizzle.team)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+* 🎿 Upload podcast videos
+* 🧠 AI-powered viral moment detection
+* ✂️ Automatic clipping of highlight moments
+* ✍️ Subtitle generation
+* 📅 Download clips from your dashboard
+* 🔀 Asynchronous, decoupled backend architecture using **Inngest** and **Modal**
+* 💳 Integrated sandbox Stripe payments (for demonstration)
 
-## Learn More
+---
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+##  Project Structure
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+Create a directory named `shortscut` and clone both the frontend and backend repositories inside it:
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
+```
+shortscut/
+🔻 shortscut-frontend/
+🔻 shortscut-backend/
+```
 
-## How do I deploy this?
+---
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+## Getting Started
+
+###  Frontend Setup
+
+1. Clone the frontend repository:
+
+   ```bash
+   git clone https://github.com/ojasKooL/shortscut-frontend
+   cd shortscut-frontend
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Run the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+---
+
+###  Inngest Development Server
+
+Start the local Inngest development server:
+
+```bash
+npx inngest-cli@latest
+```
+
+---
+
+### Stripe Webhook Setup (Sandbox)
+
+To test payments locally:
+
+1. Login to Stripe:
+
+   ```bash
+   stripe login
+   ```
+
+2. Start listening and forward webhooks to your local server:
+
+   ```bash
+   stripe listen --forward-to localhost:3000/api/webhooks/stripe
+   ```
+
+---
+
+### Backend Deployment (Modal)
+
+1. Clone the backend repository:
+
+   ```bash
+   git clone https://github.com/ojasKooL/shortscut-backend
+   cd shortscut-backend
+   ```
+
+2. Deploy the backend to **Modal**:
+
+   ```bash
+   modal deploy main.py
+   ```
+
+---
+
+## Tech Stack
+
+* **Frontend**: Next.js, Tailwind CSS, ShadCN UI
+* **Auth**: Auth.js
+* **AI Models**: Gemini via Modal
+* **Cloud Backend**: Modal, AWS S3
+* **Queue/Event System**: Inngest
+* **Payments**: Stripe (Sandbox)
+
+---
+
+##  AI Model Attribution
+
+This project uses [lr-asd](https://github.com/Junhua-Liao/LR-ASD) for speaker diarization as part of the AI processing pipeline.
+
+---
+
+##  License
+
+This project is for demonstration and educational purposes.
+
+---
+
+## Contact
+Email: kulkarniojas027@gmail.com
+
+---
