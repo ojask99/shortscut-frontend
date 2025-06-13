@@ -111,6 +111,12 @@ To test payments locally:
 
 ---
 
+##  AI Model Attribution
+
+This project uses [lr-asd](https://github.com/Junhua-Liao/LR-ASD) for speaker diarization as part of the AI processing pipeline.
+
+---
+
 ##  License
 
 This project is for demonstration and educational purposes.
